@@ -4,13 +4,15 @@ An experimental TypeScript package for code-authored, semantically located Playw
 
 ## Install from GitHub
 
-Once this repository is pushed to GitHub, install a tag or commit into your Playwright project (replace OWNER/REPO):
+Install from [cwwmbm/playwright-jev](https://github.com/cwwmbm/playwright-jev) into your Playwright project:
 
 ```sh
-npm install github:OWNER/REPO#v0.1.0
+npm install github:cwwmbm/playwright-jev
 ```
 
-Then import `createJev` from `playwright-jev` as usual. Git must be available. Private repositories require GitHub authentication on the consuming machine; an SSH alternative is `npm install git+ssh://git@github.com/OWNER/REPO.git#v0.1.0`.
+Then import `createJev` from `playwright-jev` as usual. Git must be available. An SSH alternative is `npm install git+ssh://git@github.com/cwwmbm/playwright-jev.git`; private repositories require GitHub authentication on the consuming machine.
+
+For reproducible installs, append `#<commit-sha>` or an existing release tag. For example, once `v0.1.0` is published as a Git tag, use `npm install github:cwwmbm/playwright-jev#v0.1.0`.
 
 The `prepare` lifecycle builds JavaScript and TypeScript declarations during Git installation. Build tools are dev dependencies and are installed for that preparation. Install scripts must be permitted by your npm configuration; `--ignore-scripts` prevents this source-only Git package from building. Consumers need Node 20+, their existing Playwright project/browser setup, and `OPENROUTER_API_KEY` at runtime. No key is needed to install or build. The library does not load `.env` automatically.
 
