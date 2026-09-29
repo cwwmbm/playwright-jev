@@ -1,0 +1,51 @@
+{
+  "name": "playwright-jev",
+  "version": "0.1.0",
+  "description": "Code-authored, semantically located Playwright automation with Jev",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --clean",
+    "typecheck": "tsc --noEmit -p tsconfig.check.json",
+    "test": "playwright test --project=local",
+    "test:demo": "playwright test --project=saucedemo",
+    "test:demo:headed": "playwright test --project=saucedemo --headed",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepare": "npm run build",
+    "verify:git": "node scripts/verify-git-install.mjs"
+  },
+  "peerDependencies": {
+    "playwright-core": ">=1.51.0 <2"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^20.0.0",
+    "dotenv": "^17.0.0",
+    "prettier": "^3.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0"
+  },
+  "license": "UNLICENSED"
+}
