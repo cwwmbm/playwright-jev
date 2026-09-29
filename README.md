@@ -88,7 +88,7 @@ await jev.click('add to cart on the most expensive item');
 Fill a single text field.
 
 ```ts
-await jev.fill('email address', 'andrey@example.com');
+await jev.fill('email address', 'john@example.com');
 ```
 
 ### `fillForm(values)`
@@ -97,11 +97,11 @@ Map descriptive field names to text fields, native dropdowns, or checkboxes. Thi
 
 ```ts
 await jev.within('shipping address form').fillForm({
-  'full name': 'Andrey Popov',
+  'full name': 'John Doe',
   'street address': '123 Main St',
-  city: 'Vancouver',
-  province: 'British Columbia',
-  'postal code': 'V6B 1A1',
+  city: 'New York',
+  State: 'New York',
+  'zip code': '123456',
   'save this address': true,
 });
 ```
